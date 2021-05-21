@@ -35,6 +35,36 @@ const requestListener = function (req, res) {
   }
 };
 
+//------------------------- for cal api ---------------------------
+// app.get('/demo', (req, res) => {
+//   const promise = new Promise((resolve, reject) => {
+//     const child = fork(__dirname + '/childProcess');
+//     // register event listener
+//     child.on('message', (data) => {
+//       console.log('Returning /total results');
+//       resolve(data); // data response from child process
+//       // return;
+//     });
+//     child.on('close', () => {
+//       reject('something went wrong');
+//       console.log('close');
+//       // todo: on close
+//     });
+
+//     child.send('count');
+//   });
+
+//   return promise
+//     .then((data) => {
+//       console.log(data.totalCount);
+//       return reply.api({ message: 'Thành công' }).code(ResponseCode.REQUEST_SUCCESS);
+//     })
+//     .catch((error) => {
+//       console.log('error', error);
+//       return reply.api({ message: 'Thất bại' }).code(ResponseCode.REQUEST_FAIL);
+//     });
+// });
+
 app.use(requestListener);
 
 app.listen(3000, () => {
